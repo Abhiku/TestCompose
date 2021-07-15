@@ -1,0 +1,89 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdk 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.example.myapplication"
+        minSdk 21
+        targetSdk 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion versions.compose
+    }
+}
+
+dependencies {
+    implementation deps.androidx.ktxCore
+    implementation deps.compose.ui
+    implementation "androidx.compose.ui:ui-util:${versions.compose}"
+    implementation "androidx.compose.material:material:${versions.compose}"
+    implementation "androidx.compose.material:material-icons-core:${versions.compose}"
+    implementation "androidx.compose.material:material-icons-extended:${versions.compose}"
+    implementation "androidx.compose.ui:ui-tooling:${versions.compose}"
+    implementation deps.compose.runtime
+    implementation "androidx.compose.runtime:runtime-livedata:${versions.compose}"
+    implementation "androidx.compose.foundation:foundation:${versions.compose}"
+    implementation "androidx.compose.foundation:foundation-layout:${versions.compose}"
+    implementation "androidx.compose.animation:animation:${versions.compose}"
+    implementation "androidx.compose.compiler:compiler:${versions.compose}"
+    implementation "androidx.constraintlayout:constraintlayout-compose:1.0.0-alpha07"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha07"
+    implementation "androidx.hilt:hilt-navigation-compose:1.0.0-alpha03"
+    implementation "androidx.navigation:navigation-compose:2.4.0-alpha03"
+    implementation "androidx.activity:activity-compose:${versions.actCompose}"
+    implementation "androidx.activity:activity-ktx:${versions.actCompose}"
+    implementation deps.compose.paging
+    implementation deps.accompanist.pager
+    implementation deps.accompanist.pagerIndicator
+    implementation deps.accompanist.glide
+    implementation deps.accompanist.systemuicontroller
+    implementation deps.accompanist.insets
+
+
+    implementation deps.hilt.base
+    kapt deps.hilt.compiler
+    kapt deps.hilt.androidxCompiler
+
+    implementation deps.coroutines.core
+    implementation deps.coroutines.android
+
+    implementation deps.androidx.appCompat
+    implementation deps.androidx.ktxCore
+    implementation deps.androidx.constraintLayout
+    implementation deps.androidx.design
+    implementation deps.androidx.recyclerView
+    implementation deps.androidx.fragment
+    implementation deps.androidx.compose.activity
+
+    implementation deps.kotlin
+
+    implementation project(":test")
+}

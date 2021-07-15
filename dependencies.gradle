@@ -1,0 +1,273 @@
+ext {
+    compileSdkVersion = 29
+    targetSdkVersion = 29
+    minSdkVersion = 21
+
+    versions = [
+            kotlin               : '1.5.10',
+            gradlePlugin         : '7.0.0-beta05',
+            archLifecycle        : '2.3.1',
+            room                 : '2.3.0',
+            okhttp               : '4.9.1',
+            retrofit             : '2.9.0',
+            navigation           : '2.3.1',
+            coroutines           : '1.5.1',
+            groupie              : "2.8.1",
+            hilt                 : "2.37",
+            hiltJetpack          : "1.0.0",
+            coreLibraryDesugaring: "1.0.10",
+            googleServices       : "4.3.4",
+            paging               : "3.1.0-alpha01",
+            lottie               : "3.7.0",
+            lottieCompose        : "1.0.0-beta07-1",
+            rxjava               : '2.2.1',
+            rxandorid            : '2.1.0',
+            facebook             : "6.1.0",
+            glide                : '4.11.0',
+            workManager          : "2.4.0",
+            exoplayer            : '2.14.0',
+            espresso             : '3.1.0',
+            compose              : '1.0.0-rc01',
+            actCompose           : '1.3.0-rc01',
+            accompanist          : "0.13.0",
+            orbit                : "4.0.1",
+            jacoco               : "0.8.7",
+            react                : '0.63.4'
+    ]
+    deps = [
+            androidx            : [
+                    fragment          : "androidx.fragment:fragment-ktx:1.3.5",
+                    recyclerView      : "androidx.recyclerview:recyclerview:1.1.0",
+                    constraintLayout  : "androidx.constraintlayout:constraintlayout:2.0.4",
+                    design            : "com.google.android.material:material:1.2.1",
+                    ktxCore           : "androidx.core:core-ktx:1.6.0-rc01",
+                    appCompat         : "androidx.appcompat:appcompat:1.3.0",
+                    asynclayoutinflater: "androidx.asynclayoutinflater:asynclayoutinflater:1.0.0",
+                    navigation        : [
+                            fragment: "androidx.navigation:navigation-fragment-ktx:${versions.navigation}",
+                            ui      : "androidx.navigation:navigation-ui-ktx:${versions.navigation}",
+                    ],
+                    test              : [
+                            core                    : "androidx.test:core:1.3.0",
+                            coreTesting             : "androidx.arch.core:core-testing:2.1.0",
+                            runner                  : 'androidx.test:runner:1.3.0',
+                            rules                   : 'androidx.test:rules:1.3.0',
+                            junitExt                : 'androidx.test.ext:junit:1.1.2',
+                            truthExt                : 'androidx.test.ext:truth:1.3.0',
+                            truth                   : 'com.google.truth:truth:1.1.2',
+                            guava                   : "com.google.guava:guava:26.0-android",
+                            orchestrator            : 'androidx.test:orchestrator:1.3.0',
+                            espressoCore            : "androidx.test.espresso:espresso-core:${versions.espresso}",
+                            espressoContrib         : "androidx.test.espresso:espresso-contrib:${versions.espresso}",
+                            espressoIntents         : "androidx.test.espresso:espresso-intents:${versions.espresso}",
+                            espressoAccessibility   : "androidx.test.espresso:espresso-accessibility:${versions.espresso}",
+                            espressoWeb             : "androidx.test.espresso:espresso-web:${versions.espresso}",
+                            espressoIdlingConcurrent: "androidx.test.espresso.idling:idling-concurrent:${versions.espresso}",
+                            espressoIdlingResource  : "androidx.test.espresso:espresso-idling-resource:${versions.espresso}",
+                            ext                     : [
+                                    junit: 'androidx.test.ext:junit:1.1.2',
+                                    truth: 'androidx.test.ext:truth:1.3.0',
+
+                            ]],
+                    exifinterface     : 'androidx.exifinterface:exifinterface:1.3.1',
+                    paletteKtx        : 'androidx.palette:palette-ktx:1.0.0',
+                    legacysupport     : "androidx.legacy:legacy-support-v4:1.0.0",
+                    emoji             : 'androidx.emoji:emoji:1.1.0',
+                    dynamicanimation  : "androidx.dynamicanimation:dynamicanimation:1.0.0",
+                    swiperefreshlayout: "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0",
+                    compose           : [
+                            ui                     : "androidx.compose.ui:ui:${versions.compose}",
+                            material               : "androidx.compose.material:material:${versions.compose}",
+                            material_icons_core    : "androidx.compose.material:material-icons-core:${versions.compose}",
+                            material_icons_extended: "androidx.compose.material:material-icons-extended:${versions.compose}",
+                            ui_tooling             : "androidx.compose.ui:ui-tooling:${versions.compose}",
+                            runtime                : "androidx.compose.runtime:runtime:${versions.compose}",
+                            foundation             : "androidx.compose.foundation:foundation:${versions.compose}",
+                            foundation_layout      : "androidx.compose.foundation:foundation-layout:${versions.compose}",
+                            animation              : "androidx.compose.animation:animation:${versions.compose}",
+                            compiler               : "androidx.compose.compiler:compiler:${versions.compose}",
+                            runtime_livedata       : "androidx.compose.runtime:runtime-livedata:${versions.compose}",
+                            navigation             : "androidx.navigation:navigation-compose:1.0.0-alpha10",
+                            activity               : "androidx.activity:activity-compose:${versions.actCompose}"
+                    ]
+            ],
+            arch                : [
+                    lifecycle: [
+                            common             : "androidx.lifecycle:lifecycle-common-java8:${versions.archLifecycle}",
+                            extensions         : "androidx.lifecycle:lifecycle-process:${versions.archLifecycle}",
+                            lifeRunTime        : "androidx.lifecycle:lifecycle-runtime-ktx:${versions.archLifecycle}",
+                            viewmodel          : "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.archLifecycle}",
+                            livedata           : "androidx.lifecycle:lifecycle-livedata-ktx:${versions.archLifecycle}",
+                            lifecycleExtensions: "androidx.lifecycle:lifecycle-extensions:${versions.archLifecycle}",
+                    ],
+                    test     : "androidx.arch.core:core-testing:2.1.0",
+            ],
+            room                : [
+                    library  : "androidx.room:room-runtime:${versions.room}",
+                    ktx      : "androidx.room:room-ktx:${versions.room}",
+                    processor: "androidx.room:room-compiler:${versions.room}",
+                    test     : "android.arch.persistence.room:testing:${versions.room}",
+                    rxjava   : "androidx.room:room-rxjava2:${versions.room}",
+            ],
+            retrofit            : [
+                    library       : "com.squareup.retrofit2:retrofit:${versions.retrofit}",
+                    gsonConverter : "com.squareup.retrofit2:converter-gson:${versions.retrofit}",
+                    rxjava2Adapter: "com.squareup.retrofit2:adapter-rxjava2:${versions.retrofit}",
+            ],
+            okhttp              : [
+                    library           : "com.squareup.okhttp3:okhttp:${versions.okhttp}",
+                    loggingInterceptor: "com.squareup.okhttp3:logging-interceptor:${versions.okhttp}",
+            ],
+            coroutines          : [
+                    core   : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}",
+                    android: "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutines}",
+                    rx2    : "org.jetbrains.kotlinx:kotlinx-coroutines-rx2:${versions.coroutines}",
+                    test   : "org.jetbrains.kotlinx:kotlinx-coroutines-test:${versions.coroutines}"
+            ],
+            groupie             : [
+                    library    : "com.xwray:groupie:${versions.groupie}",
+                    extentions : "com.xwray:groupie-kotlin-android-extensions:${versions.groupie}",
+                    databinding: "com.xwray:groupie-databinding:${versions.groupie}",
+                    viewBinding: "com.xwray:groupie-viewbinding:${versions.groupie}"
+            ],
+            ticker              : "com.robinhood.ticker:ticker:2.0.2",
+            gson                : "com.google.code.gson:gson:2.8.7",
+            junit               : "junit:junit:4.13.1",
+            hilt                : [
+                    base             : "com.google.dagger:hilt-android:${versions.hilt}",
+                    compiler         : "com.google.dagger:hilt-android-compiler:${versions.hilt}",
+                    navFrag          : "androidx.hilt:hilt-navigation-fragment:${versions.hiltJetpack}",
+                    androidxCompiler : "androidx.hilt:hilt-compiler:${versions.hiltJetpack}",
+                    navigationCompose: "androidx.hilt:hilt-navigation-compose:1.0.0-alpha01"
+            ],
+            timber              : "com.jakewharton.timber:timber:4.7.1",
+            googleServices      : "com.google.gms:google-services:4.3.4",
+            firebaseNew         : [
+                    bom        : "com.google.firebase:firebase-bom:28.1.0",
+                    messaging  : "com.google.firebase:firebase-messaging-ktx",
+                    analytics  : "com.google.firebase:firebase-analytics-ktx",
+                    crashlytics: "com.google.firebase:firebase-crashlytics-ndk",
+                    database   : "com.google.firebase:firebase-database-ktx",
+                    firestore  : "com.google.firebase:firebase-firestore-ktx",
+                    performance: "com.google.firebase:firebase-perf-ktx"
+
+            ],
+            firebase            : [
+                    crashlytics      : "com.google.firebase:firebase-crashlytics:17.2.2",
+                    firebaseAnalytics: "com.google.firebase:firebase-analytics:17.6.0",
+                    firebaseMessaging: "com.google.firebase:firebase-messaging:20.1.0",
+                    firebaseDatabase : "com.google.firebase:firebase-database:19.2.1",
+                    firebaseFirestore: "com.google.firebase:firebase-firestore:21.4.0"
+            ],
+            rxjava              : [
+                    rxandroid: "io.reactivex.rxjava2:rxandroid:${versions.rxandorid}",
+                    library  : "io.reactivex.rxjava2:rxjava:${versions.rxjava}",
+            ],
+            paging              : [
+                    runtime: "androidx.paging:paging-runtime-ktx:${versions.paging}",
+                    rxjava : "androidx.paging:paging-rxjava2-ktx:${versions.paging}"
+            ],
+            kotlin              : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${versions.kotlin}",
+            kotlinRelect        : "org.jetbrains.kotlin:kotlin-reflect:${versions.kotlin}",
+            chucker             : [
+                    // Chucker interceptor
+                    library: 'com.github.chuckerteam.chucker:library:3.4.0',
+                    npOp   : 'com.github.chuckerteam.chucker:library-no-op:3.4.0'
+            ],
+            facebook            : [
+                    sdk: "com.facebook.android:facebook-android-sdk:${versions.facebook}",
+            ],
+            mqtt                : [
+                    client        : 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0',
+                    androidService: 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
+            ],
+            react               : [
+                    library: "com.facebook.react:react-native:${versions.react}"
+            ],
+            speedtest           : 'fr.bmartel:jspeedtest:1.32.1',
+            glide               : [
+                    library           : "com.github.bumptech.glide:glide:${versions.glide}",
+                    compiler          : "com.github.bumptech.glide:compiler:${versions.glide}",
+                    okhttp3Integration: "com.github.bumptech.glide:okhttp3-integration:${versions.glide}",
+                    svg               : 'com.caverock:androidsvg-aar:1.4',
+                    webp              : "com.zlc.glide:webpdecoder:2.0.${versions.glide}",
+                    transformation    : 'jp.wasabeef:glide-transformations:4.0.1'
+
+            ],
+            workManager         : [
+                    library        : "androidx.work:work-runtime-ktx:${versions.workManager}",
+                    rxjavaExtension: "androidx.work:work-rxjava2:${versions.workManager}"
+            ],
+            exoplayer           : [
+                    core           : "com.google.android.exoplayer:exoplayer-core:${versions.exoplayer}",
+                    ui             : "com.google.android.exoplayer:exoplayer-ui:${versions.exoplayer}",
+                    hls            : "com.google.android.exoplayer:exoplayer-hls:${versions.exoplayer}",
+                    dash           : "com.google.android.exoplayer:exoplayer-dash:${versions.exoplayer}",
+                    imaExtension   : "com.google.android.exoplayer:extension-ima:${versions.exoplayer}",
+                    cronetExtension: "com.google.android.exoplayer:extension-cronet:${versions.exoplayer}",
+                    okhttpExtension: "com.google.android.exoplayer:extension-okhttp:${versions.exoplayer}",
+            ],
+            play                : [
+                    ads     : "com.google.android.gms:play-services-ads:20.2.0",
+                    location: "com.google.android.gms:play-services-location:17.0.0"
+            ],
+            download            : [
+                    library          : "com.liulishuo.filedownloader:library:1.7.7",
+                    okhttp3Connection: "cn.dreamtobe.filedownloader:filedownloader-okhttp3-connection:1.1.0"
+            ],
+            mockito             : [
+                    core  : "org.mockito:mockito-core:3.11.1",
+                    inline: "org.mockito:mockito-inline:3.11.1"],
+            greenrobotEssentials: 'org.greenrobot:essentials:3.0.0-RC1',
+            appsflyer           : 'com.appsflyer:af-android-sdk:5.1.1',
+            branch              : 'io.branch.sdk.android:library:4.0.0',
+            truecaller          : "com.truecaller.android.sdk:truecaller-sdk:2.3.0",
+            billingclient       : 'com.android.billingclient:billing:2.0.3',
+            lottie              : "com.airbnb.android:lottie:${versions.lottie}",
+            lottieCompose       : "com.airbnb.android:lottie-compose:${versions.lottieCompose}",
+            photoView           : "com.github.chrisbanes:PhotoView:2.3.0",
+            gpuImage            : "jp.co.cyberagent.android:gpuimage:2.0.3",
+            imageCropper        : "com.theartofdev.edmodo:android-image-cropper:2.7.0",
+            keyboardVisibility  : "net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:2.3.0",
+            ima                 : "com.google.ads.interactivemedia.v3:interactivemedia:3.21.4",
+            truth               : 'com.google.truth:truth:1.1', shimmer: "io.supercharge:shimmerlayout:2.1.0",
+            dataStore           : [
+                    library: 'androidx.datastore:datastore-preferences:1.0.0-beta01'
+            ],
+            protobuf            : 'com.google.protobuf:protobuf-javalite:3.10.0',
+            mockitoKotlin       : "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0",
+            roboElectric        : "org.robolectric:robolectric:4.5-alpha-1",
+            intercom            : 'io.intercom.android:intercom-sdk:9.0.0',
+            mockk               : "io.mockk:mockk:1.10.6",
+            bytebuddy           : "net.bytebuddy:byte-buddy:1.10.22",
+            shieldFraud         : "com.shield.android:shield-fraud:1.5.12",
+            balloon             : "com.github.skydoves:balloon:1.3.3",
+            accompanist         : [
+                    glide             : "com.google.accompanist:accompanist-glide:${versions.accompanist}",
+                    coil              : "com.google.accompanist:accompanist-coil:${versions.accompanist}",
+                    pager             : "com.google.accompanist:accompanist-pager:${versions.accompanist}",
+                    pagerIndicator    : "com.google.accompanist:accompanist-pager-indicators:${versions.accompanist}",
+                    flowlayout        : "com.google.accompanist:accompanist-flowlayout:${versions.accompanist}",
+                    systemuicontroller: "com.google.accompanist:accompanist-systemuicontroller:${versions.accompanist}",
+                    insets            : "com.google.accompanist:accompanist-insets:${versions.accompanist}",
+                    swiperefresh      : "com.google.accompanist:accompanist-swiperefresh:${versions.accompanist}",
+            ],
+            orbit               : [
+                    core: "org.orbit-mvi:orbit-core:${versions.orbit}",
+                    vm  : "org.orbit-mvi:orbit-viewmodel:${versions.orbit}",
+                    test: "org.orbit-mvi:orbit-test:${versions.orbit}"
+            ],
+            appStartup          : "androidx.startup:startup-runtime:1.0.0",
+            compose             : [
+                    paging : "androidx.paging:paging-compose:1.0.0-alpha10",
+                    runtime: "androidx.compose.runtime:runtime:${versions.compose}",
+                    ui     : "androidx.compose.ui:ui:${versions.compose}",
+            ],
+            gsonExtras          : "org.danilopianini:gson-extras:0.2.2",
+    ]
+
+    localProperties = new Properties()
+    localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+    guser = localProperties['GITHUB_USERNAME']
+    gtoken = localProperties['GITHUB_PACKAGE_KEY']
+}
