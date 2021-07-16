@@ -40,22 +40,22 @@ fun TestList(
 ) {
     LazyColumn(modifier = modifier.fillMaxSize()) {
         items(items) { item ->
-            TestCompose(item, onSelected)
+            TestCompose(item.selected, item.id, onSelected)
         }
     }
 }
 
 @Composable
-fun TestCompose(item: TestModuleItem, onSelected: (id: String, selected: Boolean) -> Unit) {
-    println("current item, ${item.id}")
+fun TestCompose(flag: Boolean, item: String, onSelected: (id: String, selected: Boolean) -> Unit) {
+    println("current item, $item")
     Row(
         modifier = Modifier
             .fillMaxWidth()
             .height(60.dp)
     ) {
-        Text(text = "post ${item.id}")
-        Checkbox(checked = item.selected, onCheckedChange = {
-            onSelected(item.id, it)
+        Text(text = "post $item")
+        Checkbox(checked = flag, onCheckedChange = {
+            onSelected(item, it)
         })
     }
 }
